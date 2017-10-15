@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- set some meta info: keywords, description and authors -->
   <meta name="keywords" content="Thermostat Assignment, HTI, 2017">
   <meta name="description" content="HTI Thermostat Assignment 2017">
   <meta name="author" content="Group 02: Jaap Bouman, Ankita Jeevanath, Cas Verploegen">
@@ -27,12 +28,16 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
+
+  <!-- set the title that is display in the browser tab -->
   <title>Thermostat-02</title>
 
+  <!-- link to the main css file -->
   <link href="css/main.css" rel="stylesheet">
 </head>
 
 <body>
+  <!-- create the navbar with the buttons to other pages -->
   <nav>
     <div class="container">
       <div class="row">
@@ -57,8 +62,32 @@
 
   <section class="content">
     <div class="container">
+      <p id="curDay">x</p>
+      <p id="curTime">xx:xx</p>
+      <p id="curTemp">x</p>
+      <p id="targetTemp">x</p>
+      <p id="dayTemp">x</p>
+      <p id="nightTemp">x</p>
+      <p id="weekProgramState">x</p>
 
+      <button onclick="getValues()">Get values</button>
     </div>
   </section>
+
+  <!-- test-script for getting all the values from the web server -->
+  <script>
+  getValues() {
+    document.getElementById('curDay').innerHTML = get(day, day);
+    document.getElementById('curTime').innerHTML = get(time, time);
+    document.getElementById('curTemp').innerHTML = get(currentTemperature, current_temperature);
+    document.getElementById('targetTemp').innerHTML = get(targetTemperature, target_temperature);
+    document.getElementById('dayTemp').innerHTML = get(dayTemperature, day_temperature);
+    document.getElementById('nightTemp').innerHTML = get(nightTemperature, night_temperature);
+    document.getElementById('weekProgramState').innerHTML = get(weekProgramState, week_program_state);
+  }
+  </script>
+
+  <!-- add the api script -->
+  <script src="js/api.js"></script>
 </body>
 </html>
