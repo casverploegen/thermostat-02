@@ -1,0 +1,39 @@
+.content .nav-planning {
+  margin-top: 15px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.content .nav-planning .nav-item {
+  height: 30px;
+  padding: 5px 0;
+}
+.content .nav-planning .nav-item p {
+  font-size: 12px;
+}
+
+.container-flex {
+  display: flex;
+  margin-top: 10px;
+}
+.container-flex .flex-item {
+  flex-grow: 1;
+  flex-basis: 4%;
+  border-right: 1px solid black;
+}
+.container-flex .flex-item p {
+  text-align: center;
+  font-size: 14px;
+}
+.container-flex .flex-active {
+  flex-grow: 2;
+}
+
+
+.bar {
+ height: 300px;
+ background-color: blue;
+}
+.bar .bar-item {
+  height: 25%;
+  background-color: red;
+}
