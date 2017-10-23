@@ -8,10 +8,49 @@
 
 #slider-container {
   transform: rotate(-90deg);
+  position: relative;
+  right: 100px;
+  top: 140px;
+}
+
+#slider {
+  width: 250px;
+  length: 30px;
 }
 
 #temperature-container {
   position: relative;
-  top: 80px;
-  right: 10px;
+  left: 100px;
+  top: -35px;
+}
+
+#temperature {
+  font-size: 76px;
+  color: red;
+}
+
+#raiseTemp {
+  font-size: 76px;
+  color: white;
+  text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+  transform: scale(2, 0.5);
+}
+
+#raiseButton {
+  position: relative;
+  left: 160px;
+  top: 50px;
+}
+
+#lowerTemp {
+  font-size: 76px;
+  color: white;
+  text-shadow: -1px 0 blue, 0 1px blue, 1px 0 blue, 0 -1px blue;
+  transform: rotate(180deg) scale(2, 0.5);
+}
+
+#lowerButton {
+  position: relative;
+  right: 300px;
+  bottom: 50px;
 }
