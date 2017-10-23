@@ -2,6 +2,7 @@
  * @author HTI students, Spring 2015, adjusted by N.Stash
  *
  */
+ 
 var ServerUrl = 'http://wwwis.win.tue.nl/2id40-ws/02';
 //Backup server
 //var ServerUrl = 'http://pcwin889.win.tue.nl/2id40-ws/02';

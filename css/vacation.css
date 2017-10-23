@@ -10,11 +10,11 @@
   transform: rotate(-90deg);
   position: relative;
   right: 100px;
-  top: 140px;
+  top: 125px;
 }
 
 #slider {
-  width: 250px;
+  width: 220px;
   length: 30px;
 }
 
@@ -31,7 +31,7 @@
 
 #raiseTemp {
   font-size: 76px;
-  color: white;
+  color: #ccc;
   text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
   transform: scale(2, 0.5);
 }
@@ -46,7 +46,7 @@
 
 #lowerTemp {
   font-size: 76px;
-  color: white;
+  color: #ccc;
   text-shadow: -1px 0 blue, 0 1px blue, 1px 0 blue, 0 -1px blue;
   transform: rotate(180deg) scale(2, 0.5);
 }
@@ -57,14 +57,6 @@
   position: relative;
   left: 152px;
   bottom: 50px;
-}
-
-#vacationEnable {
-  position: relative;
-  left: 125px;
-  top: 100px;
-  width: 0px;
-  height: 0px;
 }
 
 /* The switch - the box around the slider */
@@ -125,3 +117,115 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+#vacationEnable {
+  position: relative;
+  left: 20px;
+  top: 20px;
+  width: 0px;
+  height: 0px;
+
+  zoom: 3;
+  -moz-transform: scale(3)
+}
+
+input[type=range] {
+  /*removes default webkit styles*/
+  -webkit-appearance: none;
+  /*fix for FF unable to apply focus style bug */
+  border: 1px solid white;
+  /*required for proper track sizing in FF*/
+  width: 300px;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 300px;
+  height: 5px;
+  background: #ccc;
+  border: none;
+  border-radius: 3px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: goldenrod;
+  margin-top: -5.5px;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #ccc;
+}
+
+input[type=range]::-moz-range-track {
+  width: 300px;
+  height: 5px;
+  background: #ddd;
+  border: none;
+  border-radius: 3px;
+}
+
+input[type=range]::-moz-range-thumb {
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: goldenrod;
+}
+
+
+/*hide the outline behind the border*/
+
+input[type=range]:-moz-focusring {
+  outline: 1px solid white;
+  outline-offset: -1px;
+}
+
+input[type=range]::-ms-track {
+  width: 300px;
+  height: 5px;
+  /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+  background: transparent;
+  /*leave room for the larger thumb to overflow with a transparent border */
+  border-color: transparent;
+  border-width: 6px 0;
+  /*remove default tick marks*/
+  color: transparent;
+}
+
+input[type=range]::-ms-fill-lower {
+  background: #777;
+  border-radius: 10px;
+}
+
+input[type=range]::-ms-fill-upper {
+  background: #ddd;
+  border-radius: 10px;
+}
+
+input[type=range]::-ms-thumb {
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: goldenrod;
+}
+
+input[type=range]:focus::-ms-fill-lower {
+  background: #888;
+}
+
+input[type=range]:focus::-ms-fill-upper {
+  background: #ccc;
+}
+
+
+/*
+https://www.w3schools.com/howto/howto_css_switch.asp
