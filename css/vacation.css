@@ -5,3 +5,13 @@
   top: 15px;
   font-size: 9px;
 }
+
+#slider-container {
+  transform: rotate(-90deg);
+}
+
+#temperature-container {
+  position: relative;
+  top: 80px;
+  right: 10px;
+}
