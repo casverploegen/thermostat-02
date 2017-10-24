@@ -9,7 +9,7 @@ Visibility();
 //   currentOutput.innerHTML = get("currentTemperature", "current_temperature")
 // }
 
-currentOutput.innerHTML = tempChange;
+currentOutput.innerHTML = get("currentTemperature", "current_temperature");
 setInterval(function() {
   if (currentOutput.innerHTML != tempChange)
   currentOutput.innerHTML = get("currentTemperature", "current_temperature");
