@@ -6,32 +6,20 @@ var tempChange = get("targetTemperature", "target_temperature");
 setTargetValues();
 Visibility();
 
+
 currentOutput.innerHTML = get("currentTemperature", "current_temperature");
-setInterval(function() {
-  var result = 0;
-  var comparison = get("targetTemperature", "target_temperature");
-  if (currentOutput.innerHTML != comparison) {
-    var result = get("currentTemperature", "current_temperature");
-
-    if (comparison > result) {
-      currentOutput.innerHTML = result.fontcolor("red");
-    } else if (comparison < result){
-      currentOutput.innerHTML = result.fontcolor("blue");
-    } else {
-      currentOutput.innerHTML = result.fontcolor("green");
-    }
-  }
-}, 1500);
-
-
 slider.oninput = function() {
-    tempChange = Math.round(10 * parseFloat(this.value))/10;
-    output.innerHTML = tempChange.toFixed(1);
+    var showTempChange = Math.round(10 * parseFloat(this.value))/10;
+    output.innerHTML = showTempChange.toFixed(1);
+}
 
-    updateTarget()
+slider.onchange = function() {
+
+    tempChange = Math.round(10 * parseFloat(this.value ))/10;
+    updateTarget(tempChange)
     Visibility();
 
-   }
+}
 
 document.getElementById("raiseTemp").onclick = function() {
   //handles temperature raise
@@ -39,7 +27,7 @@ document.getElementById("raiseTemp").onclick = function() {
   output.innerHTML = tempChange.toFixed(1);
   slider.value = tempChange.toFixed(1);
 
-  updateTarget()
+  updateTarget(tempChange)
   Visibility();
 
 }
@@ -50,7 +38,7 @@ document.getElementById("lowerTemp").onclick = function() {
   output.innerHTML = tempChange.toFixed(1);
   slider.value = tempChange.toFixed(1);
 
-  updateTarget()
+  updateTarget(tempChange)
   Visibility();
 
 }
@@ -87,10 +75,10 @@ function Visibility() {
   }
 }
 
-function updateTarget() {
+function updateTarget(j) {
   var on =  (document.getElementById("vacationEnableSlider").getAttribute('value') == 1);
   if (on) {
-    put("targetTemperature", "target_temperature", (Math.round(10 *parseFloat(output.innerHTML))/10).toFixed(1));
+    put("targetTemperature", "target_temperature", (Math.round(10 *parseFloat(j))/10).toFixed(1));
   }
 }
 
@@ -102,3 +90,20 @@ function setTargetValues() {
     document.getElementById("mySwitch").checked = true;
   }
 }
+
+setInterval(function() {
+  if (currentOutput.innerHTML != get("targetTemperature", "target_temperature")) {
+
+    var result = get("currentTemperature", "current_temperature");
+
+    // if (get("targetTemperature", "target_temperature") > result) {
+    //   result = result.fontcolor("red");
+    // } else if (get("targetTemperature", "target_temperature") < result){
+    //   result = result.fontcolor("blue");
+    // } else {
+    //   result = result.fontcolor("green");
+    // }
+
+    currentOutput.innerHTML = result;
+  }
+}, 1500);
