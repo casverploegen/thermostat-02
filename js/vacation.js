@@ -2,6 +2,12 @@ var output = document.getElementById("temperature");
 var slider = document.getElementById("slider");
 var tempChange;
 
+setTargetValues();
+get("targetTemperature", "target_temperature").onchange = function() {
+  output.innerHTML = get("targetTemperature", "target_temperature");
+  slider.value = get("targetTemperature", "target_temperature");
+}
+
 slider.oninput = function() {
     tempChange = Math.round(10 * parseFloat(this.value))/10;
     output.innerHTML = tempChange.toFixed(1);
@@ -65,5 +71,14 @@ function updateTarget() {
   var on =  (document.getElementById("vacationEnableSlider").getAttribute('value') == 1);
   if (on) {
     put("targetTemperature", "target_temperature", (Math.round(10 *parseFloat(output.innerHTML))/10).toFixed(1));
+  }
+}
+
+function setTargetValues() {
+  output.innerHTML = get("targetTemperature", "target_temperature");
+  slider.value = get("targetTemperature", "target_temperature");
+  if (get("weekProgramState", "week_program_state") == 'off') {
+    document.getElementById("vacationEnableSlider").setAttribute('value', 1);
+    document.getElementById("mySwitch").checked = true;
   }
 }

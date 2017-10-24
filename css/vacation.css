@@ -10,11 +10,11 @@
   transform: rotate(-90deg);
   position: relative;
   right: 100px;
-  top: 125px;
+  top: 97.5px;
 }
 
 #slider {
-  width: 220px;
+  width: 170px;
   length: 30px;
 }
 
@@ -41,7 +41,7 @@
   width: 0px;
   position: relative;
   left: 0px;
-  top: 50px;
+  top: 55px;
 }
 
 #lowerTemp {
@@ -97,10 +97,6 @@
 
 input:checked + .slider {
   background-color: green;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
 }
 
 input:checked + .slider:before {
@@ -228,4 +224,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 
 /*
+Sources for slider and switch
 https://www.w3schools.com/howto/howto_css_switch.asp
+https://codepen.io/shohagbhuiyan/pen/mPVQXK
+*/
