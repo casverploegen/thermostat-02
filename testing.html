@@ -77,13 +77,13 @@
   <!-- test-script for getting all the values from the web server -->
   <script>
   function getValues() {
-    document.getElementById('curDay').innerHTML = get("day", "day");
-    document.getElementById('curTime').innerHTML = get("time", "time");
-    document.getElementById('curTemp').innerHTML = get("currentTemperature", "current_temperature");
-    document.getElementById('targetTemp').innerHTML = get("targetTemperature", "target_temperature");
-    document.getElementById('dayTemp').innerHTML = get("dayTemperature", "day_temperature");
-    document.getElementById('nightTemp').innerHTML = get("nightTemperature", "night_temperature");
-    document.getElementById('weekProgramState').innerHTML = get("weekProgramState", "week_program_state");
+    document.getElementById('curDay').innerHTML = "Day: " + get("day", "day");
+    document.getElementById('curTime').innerHTML = "Time: " + get("time", "time");
+    document.getElementById('curTemp').innerHTML = "Current Temp: " + get("currentTemperature", "current_temperature");
+    document.getElementById('targetTemp').innerHTML = "Target temp: " + get("targetTemperature", "target_temperature");
+    document.getElementById('dayTemp').innerHTML = "Day temp: " + get("dayTemperature", "day_temperature");
+    document.getElementById('nightTemp').innerHTML = "night temp: " + get("nightTemperature", "night_temperature");
+    document.getElementById('weekProgramState').innerHTML = "Week program state: " + get("weekProgramState", "week_program_state");
   }
   </script>
 

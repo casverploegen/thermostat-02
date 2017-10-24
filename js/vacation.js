@@ -5,14 +5,22 @@ var tempChange = get("targetTemperature", "target_temperature");
 
 setTargetValues();
 Visibility();
-// get("currentTemperature", "current_temperature").onchange = function() {
-//   currentOutput.innerHTML = get("currentTemperature", "current_temperature")
-// }
 
 currentOutput.innerHTML = get("currentTemperature", "current_temperature");
 setInterval(function() {
-  if (currentOutput.innerHTML != tempChange)
-  currentOutput.innerHTML = get("currentTemperature", "current_temperature");
+  var result = 0;
+  var comparison = get("targetTemperature", "target_temperature");
+  if (currentOutput.innerHTML != comparison) {
+    var result = get("currentTemperature", "current_temperature");
+
+    if (comparison > result) {
+      currentOutput.innerHTML = result.fontcolor("red");
+    } else if (comparison < result){
+      currentOutput.innerHTML = result.fontcolor("blue");
+    } else {
+      currentOutput.innerHTML = result.fontcolor("green");
+    }
+  }
 }, 1500);
 
 
@@ -59,7 +67,7 @@ document.getElementById("vacationEnableSlider").onclick = function() {
     output.innerHTML = get("targetTemperature", "target_temperature");
     setTimeout(function() {
       output.innerHTML = get("targetTemperature", "target_temperature");
-    }, 1);
+    }, 1000);
   }
 }
 

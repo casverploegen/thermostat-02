@@ -50,7 +50,7 @@
 
 #temperature, #currentTemperature {
   font-size: 76px;
-  color: red;
+  color: green;
 }
 
 #raiseTemp {
@@ -85,13 +85,13 @@
 
 #vacationEnable {
   position: relative;
-  left: 37.5px;
-  top: -70px;
+  left: 55px;
+  top: -85px;
   width: 0px;
   height: 0px;
 
-  zoom: 2.5;
-  -moz-transform: scale(2.5)
+  zoom: 2.0;
+  -moz-transform: scale(2.0)
 }
 
 /* The switch - the box around the slider */
