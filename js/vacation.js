@@ -1,14 +1,19 @@
 var output = document.getElementById("temperature");
 var currentOutput = document.getElementById("currentTemperature");
 var slider = document.getElementById("slider");
-var tempChange;
+var tempChange = get("targetTemperature", "target_temperature");
 
 setTargetValues();
+Visibility();
 // get("currentTemperature", "current_temperature").onchange = function() {
 //   currentOutput.innerHTML = get("currentTemperature", "current_temperature")
 // }
 
-currentOutput.innerHTML = get("currentTemperature", "current_temperature");
+currentOutput.innerHTML = tempChange;
+setInterval(function() {
+  if (currentOutput.innerHTML != tempChange)
+  currentOutput.innerHTML = get("currentTemperature", "current_temperature");
+}, 1500);
 
 
 slider.oninput = function() {
@@ -51,6 +56,10 @@ document.getElementById("vacationEnableSlider").onclick = function() {
   } else {
     document.getElementById("vacationEnableSlider").setAttribute('value', 0);
     put("weekProgramState", "week_program_state", "on");
+    output.innerHTML = get("targetTemperature", "target_temperature");
+    setTimeout(function() {
+      output.innerHTML = get("targetTemperature", "target_temperature");
+    }, 1);
   }
 }
 
