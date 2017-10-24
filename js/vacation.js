@@ -1,12 +1,15 @@
 var output = document.getElementById("temperature");
+var currentOutput = document.getElementById("currentTemperature");
 var slider = document.getElementById("slider");
 var tempChange;
 
 setTargetValues();
-get("targetTemperature", "target_temperature").onchange = function() {
-  output.innerHTML = get("targetTemperature", "target_temperature");
-  slider.value = get("targetTemperature", "target_temperature");
-}
+// get("currentTemperature", "current_temperature").onchange = function() {
+//   currentOutput.innerHTML = get("currentTemperature", "current_temperature")
+// }
+
+currentOutput.innerHTML = get("currentTemperature", "current_temperature");
+
 
 slider.oninput = function() {
     tempChange = Math.round(10 * parseFloat(this.value))/10;

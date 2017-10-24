@@ -9,22 +9,46 @@
 #slider-container {
   transform: rotate(-90deg);
   position: relative;
-  right: 100px;
-  top: 97.5px;
+  right: 130px;
+  top: 285px;
 }
 
 #slider {
-  width: 170px;
+  width: 400px;
   length: 30px;
 }
 
 #temperature-container {
   position: relative;
-  left: 100px;
-  top: -35px;
+  left: 85px;
+  top: -235px;
 }
 
-#temperature {
+#desc-container {
+  position: relative;
+  left: 45px;
+  top: 45px;
+}
+
+#descCurrent, #descTarget, #descSwitch {
+  font-size: 10px;
+}
+#descTarget {
+  position: relative;
+  top: 115px;
+}
+
+#descSwitch {
+  position: relative;
+  top: 250px;
+}
+
+#currentTemperature {
+  position: relative;
+  top: 90px;
+}
+
+#temperature, #currentTemperature {
   font-size: 76px;
   color: red;
 }
@@ -57,6 +81,17 @@
   position: relative;
   left: 152px;
   bottom: 50px;
+}
+
+#vacationEnable {
+  position: relative;
+  left: 37.5px;
+  top: -70px;
+  width: 0px;
+  height: 0px;
+
+  zoom: 2.5;
+  -moz-transform: scale(2.5)
 }
 
 /* The switch - the box around the slider */
@@ -114,17 +149,6 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-#vacationEnable {
-  position: relative;
-  left: 20px;
-  top: 20px;
-  width: 0px;
-  height: 0px;
-
-  zoom: 3;
-  -moz-transform: scale(3)
-}
-
 input[type=range] {
   /*removes default webkit styles*/
   -webkit-appearance: none;
@@ -151,7 +175,7 @@ input[type=range]::-webkit-slider-thumb {
   background: goldenrod;
   margin-top: -5.5px;
 }
-
+d
 input[type=range]:focus {
   outline: none;
 }
