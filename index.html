@@ -20,10 +20,10 @@
   <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
   <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
   <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="img/favicon/android-icon-192x192.png">
+  <!-- <link rel="icon" type="image/png" sizes="192x192"  href="img/favicon/android-icon-192x192.png">
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png"> -->
   <link rel="manifest" href="img/favicon/manifest.json">
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
@@ -62,67 +62,29 @@
 
   <section class="content">
     <div class="container">
-      <p id="temperature">20.0</p>
-      <div id="slidecontainer">
-        <input type="range" min="50" max="300" value="200" class="slider" id="myRange">
+      <div id="slider-container">
+        <input id="slider" type="range" min="5" max="30" value="17.5" step="0.1"/>
       </div>
-      
-      <div class="row" id="day_row">
-              <!-- <div class="col-md-12" id="EventsDiv" > -->
-                <table width="100%" style="border: 1px solid black">
-             <tr>
-              <th colspan="2" style="width:60px; ">6</th>
-              <th colspan="2" style="width:60px">9</th>
-              <th colspan="2" style="width:60px">12</th>
-              <th colspan="2" style="width:60px">15</th>
-              <th colspan="2" style="width:60px">18</th>
-              <th colspan="2" style="width:60px">21</th>
-              <th colspan="2" style="width:60px">00</th>
-            </tr>
-            <tr>
-              <td class="dashes"></td>
-              <td class="dashes"></td>
-              <td class="dashes"></td>
-              <td class="dashes"></td>
-              <td class="dashes"></td>
-              <td class="dashes"></td>
-              <td class="dashes"></td>
-              <td class="dashes"></td>
-              <td class="dashes"></td>
-              <td class="dashes"></td>
-              <td class="dashes"></td>
-              <td class="dashes"></td>
-              <td class="dashes"></td>
-            </tr>
-            <tr>
-              <td id="ea-00AM"></td>
-              <td id="ea-00AM"></td>
-              <td id="ea-00AM"></td>
-              <td id="ea-00AM"></td>
-              <td id="ea-00AM"></td>
-              <td id="ea-00AM"></td>
-              <td id="ea-00AM"></td>
-              <td id="ea-00AM"></td>
-              <td id="ea-00AM"></td>
-              <td id="ea-00AM"></td>
-              <td id="ea-00AM"></td>
-              <td id="ea-00AM"></td>
-              <td id="ea-00AM"></td>
-              <td id="ea-00AM"></td>
-            </tr>
-            <!-- <tr> </tr>
-            <tr> </tr> -->
-
-
-            </table>
-          <!-- </div> -->
-
+      <div id="desc-container">
+        <p id="descCurrent"> Current <br> temparture: </p>
+        <p id="descTarget"> Target <br> temperature: </p>
+      <div>
+      <div id="temperature-container">
+        <p id="currentTemperature">17.5</p>
+        <div id = "raiseButton">
+          <p id="raiseTemp">&#9650;</p>
+        </div>
+        <p id="temperature">17.5</p>
+        <div id = "lowerButton">
+          <p id="lowerTemp">&#9650;</p>
+        </div>
       </div>
-      
+
     </div>
   </section>
 
   <!-- add the api script -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
   <script src="js/api.js"></script>
   <script src="js/index.js"></script>
 </body>

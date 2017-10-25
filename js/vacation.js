@@ -107,3 +107,8 @@ setInterval(function() {
     currentOutput.innerHTML = result;
   }
 }, 1500);
+
+setInterval(function() {
+  if (output.innerHTML != get("targetTemperature", "target_temperature"));
+    output.innerHTML = get("targetTemperature", "target_temperature");
+}, 1500);
