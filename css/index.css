@@ -1,3 +1,27 @@
+#temp_row{
+  border: 1px solid black;
+  height: 410px;
+}
+
+#day_row{
+  border: 1px solid black;
+  height: 152px;
+}
+
+th {
+  text-align: center;
+  border-bottom: 2px solid black;
+}
+
+#ea-00AM{
+  height: 112px;
+}
+
+.dashes {
+  border-right: 1px solid black;
+  height: 1px;
+}
+
 #slidecontainer {
     width: 300px; /* Width of the outside container */
     transform: rotate(-90deg);
