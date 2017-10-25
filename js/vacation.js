@@ -49,10 +49,12 @@ document.getElementById("vacationEnableSlider").onclick = function() {
     document.getElementById("vacationEnableSlider").setAttribute('value', 1);
     put("targetTemperature", "target_temperature", (Math.round(10 *parseFloat(output.innerHTML))/10).toFixed(1));
     put("weekProgramState", "week_program_state", "off");
+    restrictFunctionality();
   } else {
     document.getElementById("vacationEnableSlider").setAttribute('value', 0);
     put("weekProgramState", "week_program_state", "on");
     output.innerHTML = get("targetTemperature", "target_temperature");
+    restoreFunctionality();
     setTimeout(function() {
       output.innerHTML = get("targetTemperature", "target_temperature");
     }, 1000);
@@ -88,7 +90,24 @@ function setTargetValues() {
   if (get("weekProgramState", "week_program_state") == 'off') {
     document.getElementById("vacationEnableSlider").setAttribute('value', 1);
     document.getElementById("mySwitch").checked = true;
+    restrictFunctionality();
   }
+}
+
+function restrictFunctionality() {
+  document.getElementById("navHomeButton").href = "#";
+  document.getElementById("navPlanningButton").href = "#";
+
+  document.getElementById("navHomeText").style.color = 'grey';
+  document.getElementById("navPlanningText").style.color = 'grey';
+}
+
+function restoreFunctionality() {
+  document.getElementById("navHomeButton").href = "index.html";
+  document.getElementById("navPlanningButton").href = "planning-week.html";
+
+  document.getElementById("navHomeText").style.color = 'black';
+  document.getElementById("navPlanningText").style.color = 'black';
 }
 
 setInterval(function() {

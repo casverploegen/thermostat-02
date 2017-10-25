@@ -6,6 +6,10 @@
   font-size: 9px;
 }
 
+#navHomeText, #navPlanningText {
+  color: black;
+}
+
 #slider-container {
   transform: rotate(-90deg);
   position: relative;
