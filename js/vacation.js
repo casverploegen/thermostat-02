@@ -4,7 +4,7 @@ var slider = document.getElementById("slider");
 var tempChange = get("targetTemperature", "target_temperature");
 
 setTargetValues();
-Visibility();
+Visibility(tempChange);
 
 
 currentOutput.innerHTML = get("currentTemperature", "current_temperature");
@@ -17,7 +17,7 @@ slider.onchange = function() {
 
     tempChange = Math.round(10 * parseFloat(this.value ))/10;
     updateTarget(tempChange)
-    Visibility();
+    Visibility(tempChange);
 
 }
 
@@ -28,7 +28,7 @@ document.getElementById("raiseTemp").onclick = function() {
   slider.value = tempChange.toFixed(1);
 
   updateTarget(tempChange)
-  Visibility();
+  Visibility(tempChange);
 
 }
 
@@ -39,7 +39,7 @@ document.getElementById("lowerTemp").onclick = function() {
   slider.value = tempChange.toFixed(1);
 
   updateTarget(tempChange)
-  Visibility();
+  Visibility(tempChange);
 
 }
 
@@ -59,18 +59,18 @@ document.getElementById("vacationEnableSlider").onclick = function() {
   }
 }
 
-function Visibility() {
+function Visibility(v) {
 
-  if (tempChange > 29.9) {
+  if (v > 29.9) {
     document.getElementById("raiseTemp").style.visibility = 'hidden';
   }
-  if (tempChange < 30) {
+  if (v < 30) {
     document.getElementById("raiseTemp").style.visibility = 'visible';
   }
-  if (tempChange < 5.1) {
+  if (v < 5.1) {
     document.getElementById("lowerTemp").style.visibility = 'hidden';
   }
-  if (tempChange > 5) {
+  if (v > 5) {
     document.getElementById("lowerTemp").style.visibility = 'visible';
   }
 }
@@ -111,4 +111,6 @@ setInterval(function() {
 setInterval(function() {
   if (output.innerHTML != get("targetTemperature", "target_temperature"));
     output.innerHTML = get("targetTemperature", "target_temperature");
+    slider.value = get("targetTemperature", "target_temperature");
+    Visibility(tempChange);
 }, 1500);
