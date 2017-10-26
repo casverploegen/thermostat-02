@@ -4,6 +4,7 @@ var slider = document.getElementById("slider");
 var tempChange = get("targetTemperature", "target_temperature");
 var currentNight = document.getElementById("NTemp");
 var currentDay = document.getElementById("DTemp");
+var vacationRedirect = document.getElementById("vacationRedirect");
 
 setTargetValues();
 Visibility(tempChange);

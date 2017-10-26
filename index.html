@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="nl">
 <head>
+
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -96,6 +97,11 @@
   <!-- add the api script -->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
   <script src="js/api.js"></script>
+  <script>
+    if (get("weekProgramState", "week_program_state") == 'off') {
+      window.location.replace("vacation.html");
+    }
+  </script>
   <script src="js/index.js"></script>
 </body>
 </html>
