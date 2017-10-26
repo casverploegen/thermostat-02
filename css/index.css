@@ -79,6 +79,24 @@
   bottom: 50px;
 }
 
+#DayNightTemp {
+  position: relative;
+  top: 200px;
+  right: 15px;
+}
+
+#DTemp {
+  color: red;
+  font-size: 40px;
+  text-align: left;
+}
+
+#NTemp {
+  color: blue;
+  font-size: 40px;
+  text-align: left;
+}
+
 input[type=range] {
   /*removes default webkit styles*/
   -webkit-appearance: none;
