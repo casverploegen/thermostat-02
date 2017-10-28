@@ -1,0 +1,910 @@
+<!DOCTYPE HTML>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- set some meta info: keywords, description and authors -->
+  <meta name="keywords" content="Thermostat Assignment, HTI, 2017">
+  <meta name="description" content="HTI Thermostat Assignment 2017">
+  <meta name="author" content="Group 02: Jaap Bouman, Ankita Jeevanath, Cas Verploegen">
+
+  <!-- favicon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="img/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="img/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- set the title that is display in the browser tab -->
+  <title>Thermostat-02 Planning</title>
+
+  <!-- link to the main css file -->
+  <link href="css/main.css" rel="stylesheet">
+  <link href="css/planning-days.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- create the navbar with the buttons to other pages -->
+  <nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-4">
+          <a href="index.html" class="nav-item">
+            <p>Home</p>
+          </a>
+        </div>
+        <div class="col-4">
+          <a href="#" class="nav-item nav-active">
+            <p>Planning</p>
+          </a>
+        </div>
+        <div class="col-4">
+          <a href="vacation.html" class="nav-item">
+            <p>Vacation</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="content">
+    <div class="container">
+      <!-- navigation for the week/day/settings -->
+      <div class="row nav-planning">
+        <div class="col-4">
+          <a href="planning-week.html" class="nav-item">
+            <p>My week</p>
+          </a>
+        </div>
+        <div class="col-4">
+          <a href="#" class="nav-item nav-active">
+            <p>My days</p>
+          </a>
+        </div>
+        <div class="col-4">
+          <a href="planning-settings.html" class="nav-item">
+            <p>Settings</p>
+          </a>
+        </div>
+      </div>
+
+      <div class="row" style="margin: 20px -5px;">
+        <div id="day0">
+          <button class="accordion" id="title0" style="display: none;"></button>
+          <div class="panel">
+            <div class="col col-2">
+              <div class="bar">
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+              </div>
+            </div>
+            <div class="col col-10">
+              <div class="col col-8">
+                <p>Day Temperature:</p>
+              </div>
+              <div class="col col-4">
+                <p><span class="dayTemp"></span> °C</p>
+              </div>
+              <div class="col col-8">
+                <p>Night Temperature:</p>
+              </div>
+              <div class="col col-4">
+                <p><span class="nightTemp"></span> °C</p>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 1:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 2:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 3:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 4:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 5:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+            </div>
+          </div> <!-- end panel -->
+        </div>
+        <div id="day1">
+          <button class="accordion" id="title1" style="display: none;"></button>
+          <div class="panel">
+            <div class="col col-2">
+              <div class="bar">
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+              </div>
+            </div>
+            <div class="col col-10">
+              <div class="col col-8">
+                <p>Day Temperature:</p>
+              </div>
+              <div class="col col-4">
+                <p><span class="dayTemp"></span> °C</p>
+              </div>
+              <div class="col col-8">
+                <p>Night Temperature:</p>
+              </div>
+              <div class="col col-4">
+                <p><span class="nightTemp"></span> °C</p>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 1:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 2:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 3:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 4:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 5:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+            </div>
+          </div> <!-- end panel -->
+        </div>
+        <div id="day2">
+          <button class="accordion" id="title2" style="display: none;"></button>
+          <div class="panel">
+            <div class="col col-2">
+              <div class="bar">
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+              </div>
+            </div>
+            <div class="col col-10">
+              <div class="col col-8">
+                <p>Day Temperature:</p>
+              </div>
+              <div class="col col-4">
+                <p><span class="dayTemp"></span> °C</p>
+              </div>
+              <div class="col col-8">
+                <p>Night Temperature:</p>
+              </div>
+              <div class="col col-4">
+                <p><span class="nightTemp"></span> °C</p>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 1:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 2:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 3:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 4:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 5:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+            </div>
+          </div> <!-- end panel -->
+        </div>
+        <div id="day3">
+          <button class="accordion" id="title3" style="display: none;"></button>
+          <div class="panel">
+            <div class="col col-2">
+              <div class="bar">
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+              </div>
+            </div>
+            <div class="col col-10">
+              <div class="col col-8">
+                <p>Day Temperature:</p>
+              </div>
+              <div class="col col-4">
+                <p><span class="dayTemp"></span> °C</p>
+              </div>
+              <div class="col col-8">
+                <p>Night Temperature:</p>
+              </div>
+              <div class="col col-4">
+                <p><span class="nightTemp"></span> °C</p>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 1:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 2:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 3:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 4:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 5:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+            </div>
+          </div> <!-- end panel -->
+        </div>
+        <div id="day4">
+          <button class="accordion" id="title4" style="display: none;"></button>
+          <div class="panel">
+            <div class="col col-2">
+              <div class="bar">
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+              </div>
+            </div>
+            <div class="col col-10">
+              <div class="col col-8">
+                <p>Day Temperature:</p>
+              </div>
+              <div class="col col-4">
+                <p><span class="dayTemp"></span> °C</p>
+              </div>
+              <div class="col col-8">
+                <p>Night Temperature:</p>
+              </div>
+              <div class="col col-4">
+                <p><span class="nightTemp"></span> °C</p>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 1:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 2:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 3:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 4:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 5:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+            </div>
+          </div> <!-- end panel -->
+        </div>
+        <div id="day5">
+          <button class="accordion" id="title5" style="display: none;"></button>
+          <div class="panel">
+            <div class="col col-2">
+              <div class="bar">
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+              </div>
+            </div>
+            <div class="col col-10">
+              <div class="col col-8">
+                <p>Day Temperature:</p>
+              </div>
+              <div class="col col-4">
+                <p><span class="dayTemp"></span> °C</p>
+              </div>
+              <div class="col col-8">
+                <p>Night Temperature:</p>
+              </div>
+              <div class="col col-4">
+                <p><span class="nightTemp"></span> °C</p>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 1:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 2:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 3:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 4:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 5:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+            </div>
+          </div> <!-- end panel -->
+        </div>
+        <div id="day6">
+          <button class="accordion" id="title6" style="display: none;"></button>
+          <div class="panel">
+            <div class="col col-2">
+              <div class="bar">
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+              </div>
+            </div>
+            <div class="col col-10">
+              <div class="col col-8">
+                <p>Day Temperature:</p>
+              </div>
+              <div class="col col-4">
+                <p><span class="dayTemp"></span> °C</p>
+              </div>
+              <div class="col col-8">
+                <p>Night Temperature:</p>
+              </div>
+              <div class="col col-4">
+                <p><span class="nightTemp"></span> °C</p>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 1:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 2:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 3:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 4:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 5:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+            </div>
+          </div> <!-- end panel -->
+        </div>
+        <div id="day7">
+          <button class="accordion" id="title7" style="display: none;"></button>
+          <div class="panel">
+            <div class="col col-2">
+              <div class="bar">
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+              </div>
+            </div>
+            <div class="col col-10">
+              <div class="col col-8">
+                <p>Day Temperature:</p>
+              </div>
+              <div class="col col-4">
+                <p><span class="dayTemp"></span> °C</p>
+              </div>
+              <div class="col col-8">
+                <p>Night Temperature:</p>
+              </div>
+              <div class="col col-4">
+                <p><span class="nightTemp"></span> °C</p>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 1:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 2:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 3:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 4:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 5:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+            </div>
+          </div> <!-- end panel -->
+        </div>
+        <div id="day8">
+          <button class="accordion" id="title8" style="display: none;"></button>
+          <div class="panel">
+            <div class="col col-2">
+              <div class="bar">
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+                <div class="bar-item">
+                </div>
+              </div>
+            </div>
+            <div class="col col-10">
+              <div class="col col-8">
+                <p>Day Temperature:</p>
+              </div>
+              <div class="col col-4">
+                <p><span class="dayTemp"></span> °C</p>
+              </div>
+              <div class="col col-8">
+                <p>Night Temperature:</p>
+              </div>
+              <div class="col col-4">
+                <p><span class="nightTemp"></span> °C</p>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 1:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 2:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 3:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 4:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+              <div class="switch">
+                <div class="col col-8">
+                  <p>Switch 5:</p>
+                </div>
+                <div class="col col-4">
+                  <p class="time"></p>
+                  <p class="time"></p>
+                </div>
+              </div>
+            </div>
+          </div> <!-- end panel -->
+        </div>
+      </div>
+
+      <div class="row">
+        <a href="planning-day.html" id="addDay">Add day</a>
+        <p id="test"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- add the api script -->
+  <script src='js/jquery-2.1.0.min.js'></script>
+  <script src="js/api.js"></script>
+  <script src="js/planning-days.js"></script>
+</body>
+</html>
