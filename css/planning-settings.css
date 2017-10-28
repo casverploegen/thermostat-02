@@ -1,0 +1,85 @@
+.content .nav-planning {
+  margin-top: 15px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.content .nav-planning .nav-item {
+  height: 30px;
+  padding: 5px 0;
+}
+.content .nav-planning .nav-item p {
+  font-size: 12px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 26px;
+  margin: 0px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.center {
+  text-align: center;
+}
+.center p {
+  text-align: center;
+}
+.increment {
+  margin-left: 35px;
+  margin-right: 35px;
+  margin-top: 10px;
+  margin-bottom: -8px;
+  font-size: 20px;
+  color: red;
+  background-color: lightgrey;
+}
+.decrement {
+  margin-left: 35px;
+  margin-right: 35px;
+  margin-bottom: 6px;
+  margin-top: -3.5px;
+  font-size: 22px;
+  color: blue;
+  background-color: lightgrey;
+}
+
+.increment:hover, .decrement:hover {
+  background-color: darkgrey;
+}
+
+.weekProgram p {
+  font-size: 15px;
+}
+
+.select {
+  width: 100%;
+  padding: 2px;
+  margin-top: 2.5px;
+}
+.select option {
+  display: none;
+}
+
+#message {
+  margin-top: 10px;
+  margin-bottom: -12px;
+  color: green;
+  text-align: center;
+}
+
+#save {
+  display: block;
+  cursor: pointer;
+  margin: 25px auto;
+  padding: 5px 15px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 8px;
+  background-color: lightgrey;
+  font-size: 16px;
+  color: black;
+}
+#save:hover {
+  background-color: grey;
+}
