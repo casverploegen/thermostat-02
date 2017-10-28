@@ -73,7 +73,7 @@ a:hover {
 .nav-item p {
   color: black;
   font-size: 13px;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   text-align: center;
   text-transform: uppercase;
 }
@@ -82,8 +82,9 @@ a:hover {
 }
 
 .content .container {
-  border: 1px solid black;
-  height: 564px;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  height: 94vh;
 }
 
 /*grid system*/
